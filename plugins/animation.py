@@ -82,12 +82,12 @@ async def spinner(event):
 @rishabh()
 async def loveu(event):
     hearts = ["❤️", "🧡", "💛", "💚", "💙", "💜", "🖤", "💖", "💗", "💓"]
-    msg = await event.reply(hearts[0])
-    # cycle rainbow hearts then final message
+
     for i in range(len(hearts) * 3):
-        await safe_edit(msg, hearts[i % len(hearts)])
+        await safe_edit(event, hearts[i % len(hearts)])
         await asyncio.sleep(0.3)
-    await safe_edit(msg, "I ❤️ U")
+
+    await safe_edit(event, "I ❤️ U")
 
 @CipherElite.on(events.NewMessage(pattern=r"^\.matrix(?:\s+(\d+))?$", outgoing=True))
 @rishabh()
